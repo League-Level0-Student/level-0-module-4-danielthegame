@@ -1,3 +1,4 @@
+
 package _02_boolean._1_sleepy_head;
 
 import javax.swing.JOptionPane;
@@ -12,24 +13,35 @@ public class SleepyHead {
 		/************************  SLEEPY HEAD  **************************/
 		boolean isWeekend;
 		// Write code to ask the user what day it is.
+		String awnser = JOptionPane.showInputDialog("What day is it");
         
 		// Set the boolean isWeekend based on the value they enter
-		
-		
+		if(awnser.equals("Sunday")|| awnser.equals("Saturday") ) {
+			isWeekend = true ;
+		}
+		else {
+			isWeekend = false ;
+		}
 		// If it is the weekend, tell the user they get to sleep in.
-		
+		if(isWeekend) {
+			JOptionPane.showMessageDialog(null,"Sleep in");
+		}
 		// If it is not the weekend, tell them to get out of bed and go to school!
-		
+		else {
+			JOptionPane.showMessageDialog(null,"Get out of bed and go to school");
+		}
 		
 		/************************   STAR STUDENT  **************************/
 
 		boolean passedExam;
 		// Write code to ask the user what percentage they scored in their last exam
-
-		
+		String exam =JOptionPane.showInputDialog("what percentage did oyu get on your last exam");                                                       
+		double parseScore = Double.parseDouble(exam);
 		// If they scored more than 70, they passed the exam.
 		// Set the boolean passedExam based on their score.
-		
+		if(parseScore>70) {
+			passedExam=true;
+				}
 		// If the user passed the exam, congratulate them
 		
 		// otherwise, wish them better luck next time.
