@@ -33,7 +33,7 @@ public class SleepyHead {
 		
 		/************************   STAR STUDENT  **************************/
 
-		boolean passedExam;
+		boolean passedExam=false;
 		// Write code to ask the user what percentage they scored in their last exam
 		String exam =JOptionPane.showInputDialog("what percentage did oyu get on your last exam");                                                       
 		double parseScore = Double.parseDouble(exam);
@@ -43,37 +43,59 @@ public class SleepyHead {
 			passedExam=true;
 				}
 		// If the user passed the exam, congratulate them
-		
+		if(passedExam==true) {
+			JOptionPane.showMessageDialog(null,"Nice job");
+		}
 		// otherwise, wish them better luck next time.
-		
+		else
+			JOptionPane.showMessageDialog(null,"Good luck next time");
 		
 		/************************  GAME OVER  **************************/
 
 		boolean gameIsOver = false;
 		// This code will repeat until gameIsOver is changed to true
+		
 		while (!gameIsOver) {
 			// Ask the user if the game is over. 
 			String gameOver = JOptionPane.showInputDialog("is game over");
-			if (gameOver.equalsIgnoreCase("yes"))
-				gameIsOver = true;
+			if (gameOver.equalsIgnoreCase("yes")) {
+				
 			
+				gameIsOver = true;
+			}
 			// If they answer "yes", change gameIsOver to true
 
 		}
 		// Tell the user "game is over" 
-		
+		JOptionPane.showMessageDialog(null,"Game is over");
 		
 		/***********************   RED SQUARE  ********************/
 		
-		boolean isRed;
+		boolean isRed = false;
 		// Ask the user what color to draw with. Based on their answer, set the isRed variable
+		String i =JOptionPane.showInputDialog("What color do you want to draw with");
 		
+		if(i.equals ("red")) {
+			isRed=true;
+			
+		}
 		
-		boolean isSquare;		
+		boolean isSquare = false;		
 		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
 		
+String shape =JOptionPane.showInputDialog("What shape do you want to draw");
 		
-		// Now you MUST use the && operator to join the booleans for this code. 
+		if(shape.equals ("blue")) {
+			isSquare=true;
+			
+		}
+		
+			
+		// Now you MUST use the && operator to join the booleans for this code.
+		if(isSquare==true && isRed==true ) {
+			drawRedSquare();
+			
+		}
 		// Ask your teacher if you are not sure how
 		// Use an if statement to ONLY draw a red square when it has been requested (use the method below)
 		// otherwise, tell the user you don't know how to draw that shape
@@ -85,5 +107,12 @@ public class SleepyHead {
 	static void drawRedSquare() {
 		Robot rob = new Robot();
 		// Complete the rest of this method
+		rob.move(40);
+		rob.turn(90);
+		rob.move(40);	
+		rob.turn(90);
+		rob.move(40);
+		rob.turn(90);
+		rob.turn(90);
 	}	
 }
